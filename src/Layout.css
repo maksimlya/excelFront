@@ -3,4 +3,19 @@
     justify-content: center;
     display: flex;
     align-items: center;
+    height: 20px;
+    margin: 1px;
+}
+.people {
+    border: solid red;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+.myk {
+    border:steelblue solid;
 }
