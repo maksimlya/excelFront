@@ -8,7 +8,7 @@ export class Calendar {
         let i = 1;
         while(i <= numOfDays) {
             let day = new Date(year, month, i).getDay();
-            const weekData = {sunday:'',monday:'',tuesday:'',wednesday:'',thursday:'',friday:'',saturday:''};
+            const weekData = {sunday:'',monday:'',tuesday:'',wednesday:'',thursday:'',friday:''};
             let prevWeekDays = day - 1;
             let prevMonthDays = new Date(year, month, 0).getDate();
             while(prevWeekDays >= 0) {
@@ -16,14 +16,15 @@ export class Calendar {
                 prevWeekDays--;
                 prevMonthDays--;
             }
-            while(day < 7 && i <= numOfDays) {
+            while(day < 6 && i <= numOfDays) {
                 weekData[days[new Date(year, month, i).getDay()]] = i + ' ' + months[((month) % 12 + 1)];
                 day++;
                 i++;
             }
+            i++;
             let nextWeekDays = day;
             let nextMonthDays = 1;
-            while(nextWeekDays < 7) {
+            while(nextWeekDays < 6) {
                 weekData[days[new Date(year,((month + 1)),nextMonthDays).getDay()]] = nextMonthDays++ + ' ' + months[((month + 1) % 12 + 1)];
                 nextWeekDays++;
             }
