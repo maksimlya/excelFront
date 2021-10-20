@@ -75,6 +75,10 @@ export class CalendarLayout extends Component {
             e.target.innerText = '';
             e.target.style.backgroundColor = '';
         }
+        const assignments = this.state.assignments;
+        delete assignments[e.target.id];
+        localStorage.setItem('assignments.' + this.state.selectedMonth + '.' + this.state.selectedYear, JSON.stringify(assignments));
+        this.setState({assignments: {...assignments}});
         e.preventDefault();
     }
     removePerson = e => {
